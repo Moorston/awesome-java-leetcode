@@ -2,21 +2,26 @@
 
 ## Description
 
-Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
-For example, given the array `[-2,1,-3,4,-1,2,1,-5,4]`,
-the contiguous subarray `[4,-1,2,1]` has the largest sum = `6`.
+**Example:**
 
-**More practice:**
+```
+Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+```
+
+**Follow up:**
 
 If you have figured out the O(*n*) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-**Tags:** Array, Dynamic Programming, Divide and Conquer
+**Tags:** Array, Divide and Conquer, Dynamic Programming
 
 
-## 思路0
+## 思路 0
 
-题意是求数组中子数组的最大和，这种最优问题一般第一时间想到的就是动态规划，我们可以这样想，当部分序列和大于零的话就一直加下一个元素即可，并和当前最大值进行比较，如果出现部分序列小于零的情况，那肯定就是从当前元素算起。其转移方程就是`dp[i] = nums[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);`，由于我们不需要保留dp状态，故可以优化空间复杂度为1，即`dp = nums[i] + (dp > 0 ? dp : 0);`。
+题意是求数组中子数组的最大和，这种最优问题一般第一时间想到的就是动态规划，我们可以这样想，当部分序列和大于零的话就一直加下一个元素即可，并和当前最大值进行比较，如果出现部分序列小于零的情况，那肯定就是从当前元素算起。其转移方程就是 `dp[i] = nums[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);`，由于我们不需要保留 dp 状态，故可以优化空间复杂度为 1，即 `dp = nums[i] + (dp > 0 ? dp : 0);`。
 
 ```java
 class Solution {
@@ -31,9 +36,9 @@ class Solution {
 }
 ```
 
-## 思路1
+## 思路 1
 
-题目也给了我们另一种思路，就是分治，所谓分治就是把问题分割成更小的，最后再合并即可，我们把`nums`一分为二先，那么就有两种情况，一种最大序列包括中间的值，一种就是不包括，也就是在左边或者右边；当最大序列在中间的时候那我们就把它两侧的最大和算出即可；当在两侧的话就继续分治即可。
+题目也给了我们另一种思路，就是分治，所谓分治就是把问题分割成更小的，最后再合并即可，我们把 `nums` 一分为二先，那么就有两种情况，一种最大序列包括中间的值，一种就是不包括，也就是在左边或者右边；当最大序列在中间的时候那我们就把它两侧的最大和算出即可；当在两侧的话就继续分治即可。
 
 ```java
 class Solution {
@@ -65,7 +70,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

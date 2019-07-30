@@ -4,9 +4,19 @@
 
 Given a sorted linked list, delete all duplicates such that each element appear only *once*.
 
-For example,
-Given `1->1->2`, return `1->2`.
-Given `1->1->2->3->3`, return `1->2->3`.
+**Example 1:**
+
+```
+Input: 1->1->2
+Output: 1->2
+```
+
+**Example 2:**
+
+```
+Input: 1->1->2->3->3
+Output: 1->2->3
+```
 
 **Tags:** Linked List
 
@@ -43,7 +53,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

@@ -2,12 +2,22 @@
 
 ## Description
 
-Given an index *k*, return the *k*<sup>th</sup> row of the Pascal's triangle.
+Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row of the Pascal's triangle.
 
-For example, given *k* = 3,
-Return `[1,3,3,1]`.
+Note that the row index starts from 0.
 
-**Note:**
+![img](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+In Pascal's triangle, each number is the sum of the two numbers directly above it.
+
+**Example:**
+
+```
+Input: 3
+Output: [1,3,3,1]
+```
+
+**Follow up:**
+
 Could you optimize your algorithm to use only *O*(*k*) extra space?
 
 **Tags:** Array
@@ -35,7 +45,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

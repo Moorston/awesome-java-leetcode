@@ -4,18 +4,22 @@
 
 Given an array of strings, group anagrams together.
 
-For example, given: `["eat", "tea", "tan", "ate", "nat", "bat"]`, 
-Return:
+**Example:**
 
 ```
+Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+Output:
 [
-  ["ate", "eat","tea"],
+  ["ate","eat","tea"],
   ["nat","tan"],
   ["bat"]
 ]
 ```
 
-**Note:** All inputs will be in lower-case.
+**Note:**
+
+- All inputs will be in lowercase.
+- The order of your output does not matter.
 
 **Tags:** Hash Table, String
 
@@ -52,7 +56,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

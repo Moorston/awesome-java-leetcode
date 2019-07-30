@@ -2,14 +2,28 @@
 
 ## Description
 
-Given two non-negative integers `num1` and `num2` represented as strings, return the product of `num1` and `num2`.
+1. Given two non-negative integers `num1` and `num2` represented as strings, return the product of `num1` and `num2`, also represented as a string.
 
-**Note:**
+   **Example 1:**
 
-1. The length of both `num1` and `num2` is < 110.
-2. Both `num1` and `num2` contains only digits `0-9`.
-3. Both `num1` and `num2` does not contain any leading zero.
-4. You **must not use any built-in BigInteger library** or **convert the inputs to integer** directly.
+   ```
+   Input: num1 = "2", num2 = "3"
+   Output: "6"
+   ```
+
+   **Example 2:**
+
+   ```
+   Input: num1 = "123", num2 = "456"
+   Output: "56088"
+   ```
+
+   **Note:**
+
+   1. The length of both `num1` and `num2` is < 110.
+   2. Both `num1` and `num2` contain only digits `0-9`.
+   3. Both `num1` and `num2` do not contain any leading zero, except the number 0 itself.
+   4. You **must not use any built-in BigInteger library** or **convert the inputs to integer** directly.
 
 **Tags:** Math, String
 
@@ -32,12 +46,12 @@ class Solution {
                 ans[i + j + 1] +=  c * (c2[j] - '0');
             }
         }
-        for (int i = l - 1; i > 0; ++i) {
+        for (int i = l - 1; i > 0; --i) {
             if (ans[i] > 9) {
                 ans[i - 1] += ans[i] / 10;
-                ans[i] %= 10;        
+                ans[i] %= 10;
             }
-         }
+        }
         StringBuilder sb = new StringBuilder();
         int i = 0;
         for (; ; ++i) if (ans[i] != 0) break;
@@ -50,7 +64,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

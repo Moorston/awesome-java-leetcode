@@ -2,12 +2,16 @@
 
 ## Description
 
-Given *numRows*, generate the first *numRows* of Pascal's triangle.
+Given a non-negative integer *numRows*, generate the first *numRows* of Pascal's triangle.
 
-For example, given *numRows* = 5,
-Return
+![img](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+In Pascal's triangle, each number is the sum of the two numbers directly above it.
+
+**Example:**
 
 ```
+Input: 5
+Output:
 [
      [1],
     [1,1],
@@ -49,7 +53,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

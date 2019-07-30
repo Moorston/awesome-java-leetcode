@@ -5,7 +5,7 @@
 Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the **longest** path between any two nodes in a tree. This path may or may not pass through the root.
 
 **Example:**
-Given a binary tree
+Given a binary tree 
 
 ```
           1
@@ -13,7 +13,6 @@ Given a binary tree
         2   3
        / \     
       4   5    
-
 ```
 
 Return **3**, which is the length of the path [4,2,1,3] or [5,2,1,3].
@@ -58,7 +57,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

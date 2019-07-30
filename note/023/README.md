@@ -2,14 +2,26 @@
 
 ## Description
 
-Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+Merge *k* sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+
+**Example:**
+
+```
+Input:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+Output: 1->1->2->3->4->4->5->6
+```
 
 **Tags:** Linked List, Divide and Conquer, Heap
 
 
-## 思路0
+## 思路 0
 
-题意是合并多个已排序的链表，分析并描述其复杂度，我们可以用分治法来两两合并他们，假设`k`为总链表个数，`N`为总元素个数，那么其时间复杂度为`O(Nlogk)`。
+题意是合并多个已排序的链表，分析并描述其复杂度，我们可以用分治法来两两合并他们，假设 `k` 为总链表个数，`N` 为总元素个数，那么其时间复杂度为 `O(Nlogk)`。
 
 ```java
 /**
@@ -52,9 +64,9 @@ class Solution {
 }
 ```
 
-## 思路1
+## 思路 1
 
-还有另一种思路是利用优先队列，该数据结构用到的是堆排序，所以对总链表个数为`k`的复杂度为`logk`，总元素为个数为`N`的话，其时间复杂度也为`O(Nlogk)`。
+还有另一种思路是利用优先队列，该数据结构用到的是堆排序，所以对总链表个数为 `k` 的复杂度为 `logk`，总元素为个数为 `N` 的话，其时间复杂度也为 `O(Nlogk)`。
 
 ```java
 /**
@@ -93,7 +105,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

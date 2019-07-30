@@ -2,14 +2,14 @@
 
 ## Description
 
-Given a sorted array, remove the duplicates in place such that each element appear only *once* and return the new length.
+Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
-Do not allocate extra space for another array, you must do this in place with constant memory.
+**Example:**
 
-For example,
-Given input array *nums* = `[1,1,2]`,
-
-Your function should return length = `2`, with the first two elements of *nums* being `1` and `2` respectively. It doesn't matter what you leave beyond the new length.
+```
+Input: 1->2->4, 1->3->4
+Output: 1->1->2->3->4->4
+```
 
 **Tags:** Linked List
 
@@ -50,7 +50,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 

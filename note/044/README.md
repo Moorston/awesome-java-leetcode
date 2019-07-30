@@ -2,33 +2,75 @@
 
 ## Description
 
-Implement wildcard pattern matching with support for `'?'` and `'*'`.
+Given an input string (`s`) and a pattern (`p`), implement wildcard pattern matching with support for `'?'` and `'*'`.
 
 ```
 '?' Matches any single character.
 '*' Matches any sequence of characters (including the empty sequence).
+```
 
-The matching should cover the entire input string (not partial).
+The matching should cover the **entire** input string (not partial).
 
-The function prototype should be:
-bool isMatch(const char *s, const char *p)
+**Note:**
 
-Some examples:
-isMatch("aa","a") → false
-isMatch("aa","aa") → true
-isMatch("aaa","aa") → false
-isMatch("aa", "*") → true
-isMatch("aa", "a*") → true
-isMatch("ab", "?*") → true
-isMatch("aab", "c*a*b") → false
+- `s` could be empty and contains only lowercase letters `a-z`.
+- `p` could be empty and contains only lowercase letters `a-z`, and characters like `?` or `*`.
+
+**Example 1:**
+
+```
+Input:
+s = "aa"
+p = "a"
+Output: false
+Explanation: "a" does not match the entire string "aa".
+```
+
+**Example 2:**
+
+```
+Input:
+s = "aa"
+p = "*"
+Output: true
+Explanation: '*' matches any sequence.
+```
+
+**Example 3:**
+
+```
+Input:
+s = "cb"
+p = "?a"
+Output: false
+Explanation: '?' matches 'c', but the second letter is 'a', which does not match 'b'.
+```
+
+**Example 4:**
+
+```
+Input:
+s = "adceb"
+p = "*a*b"
+Output: true
+Explanation: The first '*' matches the empty sequence, while the second '*' matches the substring "dce".
+```
+
+**Example 5:**
+
+```
+Input:
+s = "acdcb"
+p = "a*c?b"
+Output: false
 ```
 
 **Tags:** String, Dynamic Programming, Backtracking, Greedy
 
 
-## 思路0
+## 思路 0
 
-题意是让让你从判断`s`字符串是否通配符匹配于`p`，这道题和[Regular Expression Matching][010]很是相似，区别在于`*`，正则匹配的`*`不能单独存在，前面必须具有一个字符，其意义是表明前面的这个字符个数可以是任意个数，包括0个；而通配符的`*`是可以随意出现的，跟前面字符没有任何关系，其作用是可以表示任意字符串。在此我们可以利用*贪心算法*来解决这个问题，需要两个额外指针`p`和`match`来分别记录最后一个`*`的位置和`*`匹配到`s`字符串的位置，其贪心体现在如果遇到`*`，那就尽可能取匹配后方的内容，如果匹配失败，那就回到上一个遇到`*`的位置来继续贪心。
+题意是让让你从判断 `s` 字符串是否通配符匹配于 `p`，这道题和[Regular Expression Matching][010]很是相似，区别在于 `*`，正则匹配的 `*` 不能单独存在，前面必须具有一个字符，其意义是表明前面的这个字符个数可以是任意个数，包括 0 个；而通配符的 `*` 是可以随意出现的，跟前面字符没有任何关系，其作用是可以表示任意字符串。在此我们可以利用 *贪心算法* 来解决这个问题，需要两个额外指针 `p` 和 `match` 来分别记录最后一个 `*` 的位置和 `*` 匹配到 `s` 字符串的位置，其贪心体现在如果遇到 `*`，那就尽可能取匹配后方的内容，如果匹配失败，那就回到上一个遇到 `*` 的位置来继续贪心。
 
 ```java
 class Solution {
@@ -56,11 +98,13 @@ class Solution {
 ```
 
 
-## 思路1
+## 思路 1
 
-另一种思路就是动态规划了，我们定义`dp[i][j]`的真假来表示`s[0..i)`是否匹配`p[0..j)`，其状态转移方程如下所示：
-* 如果`p[j - 1] != '*'`，`P[i][j] = P[i - 1][j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '?');`
-* 如果`p[j - 1] == '*'`，`P[i][j] = P[i][j - 1] || P[i - 1][j]`
+另一种思路就是动态规划了，我们定义 `dp[i][j]` 的真假来表示 `s[0..i)` 是否匹配 `p[0..j)`，其状态转移方程如下所示：
+
+* 如果 `p[j - 1] != '*'`，`P[i][j] = P[i - 1][j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '?');`
+
+* 如果 `p[j - 1] == '*'`，`P[i][j] = P[i][j - 1] || P[i - 1][j]`
 
 ```java
 class Solution {
@@ -90,7 +134,7 @@ class Solution {
 
 ## 结语
 
-如果你同我一样热爱数据结构、算法、LeetCode，可以关注我GitHub上的LeetCode题解：[awesome-java-leetcode][ajl]
+如果你同我一样热爱数据结构、算法、LeetCode，可以关注我 GitHub 上的 LeetCode 题解：[awesome-java-leetcode][ajl]
 
 
 
